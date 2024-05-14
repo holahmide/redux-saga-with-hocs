@@ -14,8 +14,7 @@ function* fetchProfileRequest(): Generator<Promise<Response> | any, any, any> {
 function* fetchUserProfile(): Generator<any, void, any> {
   try {
     const user: any = yield call(fetchProfileRequest);
-    if (user) {
-    }
+
     yield put(fetchProfileSuccess(user));
   } catch {
     yield put(fetchProfileFailure());

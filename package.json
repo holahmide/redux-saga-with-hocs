@@ -1,5 +1,5 @@
 {
-  "name": "take-home-project",
+  "name": "redux-saga-with-hocs",
   "version": "0.1.0",
   "private": true,
   "scripts": {

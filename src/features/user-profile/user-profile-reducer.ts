@@ -39,9 +39,7 @@ export const {
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(logout, (state) => {
-      state.profile = initialState.profile;
-    });
+    builder.addCase(logout, () => initialState);
   },
 });
 
