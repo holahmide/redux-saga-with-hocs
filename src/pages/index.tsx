@@ -1,4 +1,4 @@
-import withPublicPage from "@/hocs/with-public-page";
+import withGuestPage from "@/hocs/with-guest-page";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 
@@ -17,4 +17,4 @@ const Home = () => {
   );
 };
 
-export default withPublicPage(Home);
+export default withGuestPage(Home);

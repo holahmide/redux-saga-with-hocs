@@ -1,6 +1,5 @@
 import SignInContainer from "@/features/authentication/authentication-container";
-import withPrivatePage from "@/hocs/with-private-page";
-import withPublicPage from "@/hocs/with-public-page";
+import withGuestPage from "@/hocs/with-guest-page";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -15,4 +14,4 @@ const SignInPage = () => {
   );
 };
 
-export default withPublicPage(SignInPage);
+export default withGuestPage(SignInPage);

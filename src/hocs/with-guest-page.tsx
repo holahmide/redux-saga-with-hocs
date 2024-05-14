@@ -1,9 +1,9 @@
 import { ComponentType, useEffect } from "react";
 import { useRouter } from "next/router";
-import { compose } from "ramda";
 import withAuth from "./with-auth";
+import { compose } from "ramda";
 
-const withPrivatePage = (Component: ComponentType) => {
+const withGuestPage = (Component: ComponentType) => {
   const WrappedComponent = ({
     isAuthenticated,
     ...props
@@ -12,14 +12,14 @@ const withPrivatePage = (Component: ComponentType) => {
   }) => {
     const { push } = useRouter();
     useEffect(() => {
-      if (!isAuthenticated) push("/sign-in");
+      if (isAuthenticated) push("/user-profile");
     }, [isAuthenticated, push]);
 
     return <Component {...props} />;
   };
 
-  WrappedComponent.displayName = "withPrivatePage";
+  WrappedComponent.displayName = "withGuestPage";
   return WrappedComponent;
 };
 
-export default compose(withAuth, withPrivatePage);
+export default compose(withAuth, withGuestPage);
